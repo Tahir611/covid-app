@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Cards from "./components/Cards/Cards";
+import Countrypicker from "./components/countrypicker/Countrypicker";
+import Chart from "./components/chart/Chart";
 
-function App() {
+const App = () => {
+  const [confirm, setConfirm] = useState([]);
+  const [recovered, setRecovered] = useState([]);
+  const [deaths, setDeaths] = useState([]);
+  const [isCountry, setIsCountry] = useState([]);
+  const [chart, setChart] = useState([])
+// console.log(isCountry);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Cards
+        confirm={confirm}
+        recovered={recovered}
+        deaths={deaths}
+        isCountry={isCountry}
+        setChart={setChart}
+      />
+      <Countrypicker
+        setConfirm={setConfirm}
+        setDeaths={setDeaths}
+        setRecovered={setRecovered}
+        setIsCountry={setIsCountry}
+      />
+      <Chart
+        confirm={confirm}
+        recovered={recovered}
+        deaths={deaths}
+        isCountry={isCountry}
+        chart={chart}
+      />
+    </>
   );
-}
+};
 
 export default App;

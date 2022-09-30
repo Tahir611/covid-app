@@ -1,0 +1,26 @@
+.card {
+    margin: 0 2% !important;
+    border-radius: 10px;
+
+}
+
+.card-body{
+    box-shadow: inset 1px 1px 6px #6c6b68;
+}
+
+.death-border{
+    border-bottom: solid black 10px;
+    border-radius: 12px;
+}
+
+.confirmed-border{
+    border-bottom: solid red 10px;
+    border-radius: 12px;
+}
+
+.recovered-border{
+    border-bottom: solid green 10px;
+    border-radius: 12px;
+}
+
+
